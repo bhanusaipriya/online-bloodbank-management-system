@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>BloodBank Management System</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px/1.8 Lato, sans-serif;
+    height:500px;
+    color:black;
+  }
+  h3, h4 {
+    margin: 10px 0 30px 0;
+    letter-spacing: 10px;      
+    font-size: 20px;
+    color: RED;
+  }
+  .container {
+    padding: 80px 120px;
+  }
+  .person {
+    border: 10px solid yellow;
+    margin-bottom: 25px;
+    width: 80px;
+    height: 80px;
+    opacity: 0.7;
+  }
+  .person:hover {
+    border-color: RED;
+  }
+  .carousel-inner img {
+    /* make all photos black and white */ 
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+  }
+  .carousel-caption h3 {
+    color: green !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+        color: pink;
+    
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+  .bg-1 {
+    background: pink;
+    color: RED;
+  }
+  .bg-1 h3 {color: RED;}
+  .bg-1 p {font-style: italian;}
+  .list-group-item:first-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  .list-group-item:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail p {
+    margin-top: 15px;
+    color: green;
+  }
+  .btn {
+    padding: 10px 20px;
+    background-color: grey;
+    color: grey;
+    border-radius: 0;
+    transition: .2s;
+  }
+  .btn:hover, .btn:focus {
+    border: 1px solid grey;
+    background-color: black;
+    color: black;
+  }
+  .modal-header, h4, .close {
+    background-color: #333;
+    color: #fff !important;
+    text-align: center;
+    font-size: 30px;
+  }
+  li{
+  text-color:pink;
+  }
+  .modal-header, .modal-body {
+    padding: 40px 50px;
+  }
+  .nav-tabs li a {
+    color: black;
+  }
+  #googleMap {
+    width: 100%;
+    height: 400%;
+    -webkit-filter: red;
+    filter: red;
+  }  
+  .navbar  {
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 0;
+    background-color: black;
+    color:red;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand { 
+    color: white !important;
+        background-color:black;
+    
+  }
+  .navbar-nav li a:hover {
+    color: red !important;
+        background-color: black;
+    
+  }
+  
+   .navbar-nav li.active a {
+    color: red !important;
+    background-color: black !important;
+  }
+  
+  .navbar-default .navbar-toggle {
+    border-color: red;
+        background-color: RED;
+    
+  }
+  .open .dropdown-toggle {
+    color: RED;
+    background-color: RED;
+  }
+  .dropdown-menu li a {
+    color: RED ;
+  }
+  .dropdown-menu li a:hover {
+    background-color: red ;
+  }
+  .form-control {
+    border-radius: 0;
+  }
+  textarea {
+      background-color: green;
+  
+    resize: none;
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage" ><h4>        Life Saver      </h4></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li ><a href="#myPage"><h5>HOME</h5></a></li>
+        <li><a href="Register.jsp"><h5>DONOR REGISTER</h5></a></li>
+        <li><a href="Login.html"><h5>USER LOGIN</h5></a></li>
+         <li><a href="BloodbankLogin.jsp"><h5>BLOODBANK LOGIN</h5></a></li>
+              <li><a href="HospitalLogin.html"><h5>HOSPITAL LOGIN</h5></a></li>
+          <li><a href="Receipient.jsp"><h5>BLOODBANKS NEARBY</h5></a></li>
+           <li><a href="locationdonor.jsp"><h5>NEAR BY DONORS</h5></a></li>
+        <li><a href="contactus.html"><h5>CONTACT US</h5></a></li>
+        <li><a href="Aboutus.html"><h5>ABOUT US</h5></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+<div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="images1/red.jpg" width="1200" height="700">
+        <div class="carousel-caption">
+        </div>      
+      </div>
+
+      <div class="item">
+        <img src="images1/pic5.jpg"  width="1200" height="700">
+        <div class="carousel-caption">
+        </div>      
+      </div>
+    
+      <div class="item">
+        <img src="images1/gift.jpg" width="1200" height="700">
+        <div class="carousel-caption">
+        </div>      
+      </div>
+    </div>
+</div>
+
+<div id="band" class="container text-center">
+  <h3>WELCOME TO BLOOD BANK MANAGEMENT SYSTEM</h3>
+  <p><em>"1 out of every 5 people in India refuse to donate blood because they think it's dangerous.It results in deaths of millions of people every year." </em></p>
+ <h3>Blood facts</h3>
+
+    <p>Blood is the life-maintaining fluid that circulates through the body's heart, arteries, veins and capillaries.
+    Blood carries to the body nourishment, electrolytes, hormones, vitamins, antibodies, heat, and oxygen.
+    Blood carries away from the body waste matter and carbon dioxide.
+    Blood fights against infection and helps heal wounds, keeping you healthy.
+    Blood makes up about 7% of your body's weight.
+    A newborn baby has about one cup of blood in his or her body.
+    White blood cells are the body's primary defence against infection.
+    Granulocytes, a type of white blood cell, roll along blood vessel walls to search and destroy bacteria.
+    Red blood cells carry oxygen to the body's organs and tissues.
+    There are about one billion red blood cells in two to three drops of blood.
+    Red blood cells live about 120 days in the circulatory system.
+    Blood platelets help clotting and give those with leukemia and other cancers a chance to live.</p>
+  <h3>Tips on Blood Donation</h3>
+
+    <p>Have a good meal at least 3 hours before donating blood.
+    Accept the snacks offered to you after the donation, it is vital that you have them. You are recommended to have a good meal later.
+    Avoid smoking on the day before donating. You can smoke 3 hours after donation.
+    You will not be eligible to donate blood if you have consumed alcohol 48 hours before donation.
+
+
+Misconceptions about donating blood
+
+    "I will feel drained and tired after donating" - You will not feel drained or tired if you continue to drink fluids and have a good meal.
+    "I cannot resume normal activities" - You can resume all your normal activities, though you're asked to refrain.
+    "I will have low blood" - If you are okayed to donate by the doctor you will still have surplus blood after the donation.
+    "I can't take alcohol..." - You can on the next day.
+    "It will be painful while donating" - No, you will not feel any pain.
+    "I will feel dizzy and may faint" - You will not faint or feel uncomfortable after donating blood.
+    "I may get AIDS!" - No! Make sure disposable syringes are used and all measures are taken to keep you germ free.
+    "My blood is common. I don't think there will be demand for it" - That is why the demand for your type is greater than for rare types.</p>
+  <br>
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip(); 
+  
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+
+</body>
+</html>
+
