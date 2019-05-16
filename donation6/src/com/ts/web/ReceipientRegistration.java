@@ -37,7 +37,7 @@ public class ReceipientRegistration extends HttpServlet {
 		System.out.println(receipientId);
 		if(x > 0){
 			out.println("<h1><center>Registration success...</center></h1>");
-			RequestDispatcher rd = request.getRequestDispatcher("SearchForReceipient.html");
+			RequestDispatcher rd = request.getRequestDispatcher("search.html");
 			rd.include(request, response);
 		}
 		else{

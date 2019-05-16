@@ -35,11 +35,11 @@ public class RegisterServlet extends HttpServlet {
 		System.out.println(firstName+" "+lastName+" "+phoneNumber+" "+gender+" "+email+" "+ city+" "+address+" "+ age+" "+userName+" "+password+" "+bloodGroup);
 		List<Donor> donorlist = donorDao.getAllDonors();
 		int c = 0;
-		for(Donor d:donorlist){
-			if(d.getUserName().equals("userName")){
-				c++;
-			}
-		}
+		//for(Donor d:donorlist){
+			//if(d.getUserName().equals("userName")){
+			//	c++;
+			//}
+		//}
 		if(c > 0){
 			out.println("<body>");
 			out.print("<h1 style='color:Blue;'><center>Sorry.. this username already exists</center></h1>");
